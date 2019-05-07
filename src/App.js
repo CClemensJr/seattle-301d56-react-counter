@@ -24,9 +24,16 @@ class Content extends React.Component {
     this.state = { counter: 0 };
   }
 
-  handleClick = e => {
+  handleAddition = e => {
     e.preventDefault("");
     let counter = (this.state.counter += 1);
+
+    this.setState({ counter });
+  };
+
+  handleSubtraction = e => {
+    e.preventDefault("");
+    let counter = (this.state.counter -= 1);
 
     this.setState({ counter });
   };
@@ -36,7 +43,8 @@ class Content extends React.Component {
       <div>
         <h3>{this.state.counter}</h3>
         <input />
-        <button onClick={this.handleClick}>Click Me</button>
+        <button onClick={this.handleAddition}>+</button>
+        <button onClick={this.handleSubtraction}>-</button>
       </div>
     );
   }
