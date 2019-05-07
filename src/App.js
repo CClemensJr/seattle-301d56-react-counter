@@ -1,25 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+
+
+const Header = () => {
+  return (
+    <header>
+      <h1>React Counter</h1>
+    </header>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer>
+      <h4>This is a footer and stuff.</h4>
+    </footer>
+  );
+}
+
+class Content extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0 };
+  }
+
+  handleAddition = e => {
+    e.preventDefault("");
+    let counter = (this.state.counter += 1);
+
+    this.setState({ counter });
+  };
+
+  handleSubtraction = e => {
+    e.preventDefault("");
+    let counter = (this.state.counter -= 1);
+
+    this.setState({ counter });
+  };
+
+  render() {
+    return (
+      <div>
+        <h3>{this.state.counter}</h3>
+        <input />
+        <button onClick={this.handleAddition}>+</button>
+        <button onClick={this.handleSubtraction}>-</button>
+      </div>
+    );
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header />
+      <Content />
+      <Footer />
+    </React.Fragment>
   );
 }
 
