@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # react-counter
 > Use React.js to create a dynamic counter!
 
@@ -30,3 +31,6 @@ increment by 1. If the "-" button is clicked, the counter will decrement by 1.``
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+=======
+# seattle-301d56-react-counter
+>>>>>>> 8a05b01de232541704b5a9bf8213defffaf92b8c
